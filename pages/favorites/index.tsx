@@ -10,21 +10,17 @@ const FavoritesPage = () => {
   const [favoritePokemons, setFavoritePokemons] = useState<number[]>([]);
 
   useEffect(() => {
-    setFavoritePokemons( localFavorites.pokemons() );
+    setFavoritePokemons(localFavorites.pokemons());
   }, []);
-  
-
 
   return (
-      <Layout title='Pokémons - Favoritos'>
-        
-        {
-          favoritePokemons.length === 0 
-            ? ( <NoFavorites /> )
-            : ( <FavoritePokemons pokemons={favoritePokemons} /> )
-              }
-      
-      </Layout>
+    <Layout title='Pokémons - Favoritos'>
+      {
+        favoritePokemons.length === 0
+          ? (<NoFavorites />)
+          : (<FavoritePokemons pokemons={favoritePokemons} />)
+      }
+    </Layout>
   )
 };
 
